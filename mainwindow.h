@@ -3,6 +3,7 @@
 #include <QMainWindow>
 #include <QtWidgets>
 #include "kernels.h"
+#include "ui_mainwindow.h" // Ensure this is included
 
 namespace Ui {
 class MainWindow;
@@ -13,7 +14,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:

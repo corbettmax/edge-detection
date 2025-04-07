@@ -1,6 +1,10 @@
 # Edge detection
 
-C++ Qt implementation of edge detection algorithms.
+C++ implementation of edge detection algorithms. Forked from https://github.com/vaultah/edge-detection. 
+
+Updated to Qt6 GUI
+Parallelized with OpenMP
+Added Sample Images
 
 Currently available algorithms:
 
@@ -12,18 +16,14 @@ Currently available algorithms:
 
 The project includes GUI for viewing results.
 
-## Examples
 
-### Original image
+Setup:
+sudo apt update
+sudo apt install cmake qt6-base-dev qtcreator build-essential
+cd ./build
+cmake ..
+make
+./EdgeDetection
 
-Photo by [Michael Salisbury](http://msalisbu.com/)
 
-![original](http://i.imgur.com/J5QSxF9.png)
 
-### Canny edge detector
-
-![canny](http://i.imgur.com/pq3goPg.png)
-
-### Sobel edge detector
-
-![sobel](http://i.imgur.com/AlqNaAy.png)

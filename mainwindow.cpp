@@ -1,7 +1,6 @@
 #include <QtWidgets>
 #include <functional>
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 #include "algorithms.h"
 
 
