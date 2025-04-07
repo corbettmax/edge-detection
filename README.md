@@ -19,11 +19,11 @@ The project includes GUI for viewing results.
 
 Setup:
 sudo apt update
-sudo apt install cmake qt6-base-dev qtcreator build-essential
+sudo apt install cmake mpi qt6-base-dev qtcreator build-essential
 cd ./build
 cmake ..
 make
-./EdgeDetection
+mpirun -np 4 ./EdgeDetection
 
 
 

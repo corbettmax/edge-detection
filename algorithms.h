@@ -1,5 +1,6 @@
 #ifndef ALGORITHMS_H
 #define ALGORITHMS_H
+#include <QImage>
 
 void gaussian_kernel(float);
 void magnitude(QImage&, const QImage&, const QImage&);
