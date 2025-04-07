@@ -2,6 +2,7 @@
 #include <functional>
 #include "mainwindow.h"
 #include "algorithms.h"
+#include <QElapsedTimer> // Include QElapsedTimer
 
 
 using namespace std;
@@ -24,7 +25,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    filename = QFileDialog::getOpenFileName(this, tr("Select a single image"));
+    // Set the default directory to the parent directory of the current executable
+    QString defaultDir = QDir::currentPath();
+    defaultDir = QString("%1/../img").arg(defaultDir);
+
+    filename = QFileDialog::getOpenFileName(this, tr("Select a single image"), defaultDir);
     original = QImage(filename);
     display(original);
     grayscale = original.convertToFormat(QImage::Format_Grayscale8);
@@ -44,6 +49,9 @@ void MainWindow::display(const QImage& image) {
 
 void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
+    QElapsedTimer timer;
+    timer.start(); // Start the timer
+
     switch (index) {
     case 0:
         display(original);
@@ -61,6 +69,11 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
         display(functions[index - 2](grayscale));
         break;
     }
+
+    qint64 elapsed = timer.elapsed(); // Get elapsed time
+
+    // Update the QLabel with the elapsed time
+    ui->labelElapsedTime->setText(QString("Time to apply algorithm: %1 ms").arg(elapsed));
 }
 
 

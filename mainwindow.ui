@@ -91,6 +91,19 @@
      </widget>
     </item>
     <item>
+     <widget class="QLabel" name="labelElapsedTime">
+       <property name="text">
+        <string>Time to apply algorithm: 0 ms</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white; font-size: 14px;</string>
+        </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QGraphicsView" name="image">
       <property name="styleSheet">
        <string notr="true">border-style: solid; border-width: 0</string>
